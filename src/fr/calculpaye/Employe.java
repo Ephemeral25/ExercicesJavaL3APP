@@ -1,5 +1,6 @@
 package fr.calculpaye;
 
+//Exercice 3
 public class Employe {
     private String nom;
     private double salaire; //par heure

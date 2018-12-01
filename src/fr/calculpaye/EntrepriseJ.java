@@ -2,6 +2,7 @@ package fr.calculpaye;
 
 import java.util.ArrayList;
 
+//Exercice 3
 public class EntrepriseJ {
     ArrayList<Employe> employes = new ArrayList<>();
 
