@@ -20,11 +20,12 @@ public class BiblioJ {
         Ouvrage ouv5 = new Ouvrage("Gérer le stress en 3 étapes simples", 2018, Ouvrage.SupportMedia.papier);
         Ouvrage ouv6 = new Ouvrage("GitHub pour les nuls", 2016, Ouvrage.SupportMedia.cléUSB);
 
+        //Remplissage de la liste d'abonné de la bibliothèque
         biblio.addAbonne(abo1);
         biblio.addAbonne(abo2);
         biblio.addAbonne(abo3);
         biblio.addAbonne(abo4);
-
+        //Remplissage de la liste d'ouvrage de la bibliothèque
         biblio.addOuvrage(ouv1);
         biblio.addOuvrage(ouv2);
         biblio.addOuvrage(ouv3);
@@ -32,13 +33,19 @@ public class BiblioJ {
         biblio.addOuvrage(ouv5);
         biblio.addOuvrage(ouv6);
 
+        //Simulation d'activité au sein de la bibliothèque
         biblio.emprunter(ouv1, abo1);
+        biblio.emprunter(ouv3, abo1);
+        biblio.reserver(ouv6);
+        biblio.restituer(ouv1);
+        biblio.emprunter(ouv1, abo3);
+        biblio.emprunter(ouv5, abo2);
 
 
-
-
+        //Affichage des informations
         biblio.afficherOuvragesDisponibles();
         biblio.afficherAbonnes();
-        biblio.infosOuvragesDisponibles();
+        biblio.afficherOuvragesReserves();
+        biblio.afficherOuvragesEmprunts();
     }
 }

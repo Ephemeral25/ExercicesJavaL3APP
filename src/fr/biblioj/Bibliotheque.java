@@ -20,10 +20,10 @@ public class Bibliotheque {
         ouvrage.setDispo(false);
     }
 
-    public void restituer(Ouvrage ouvrage, Abonne abonne) {
+    public void restituer(Ouvrage ouvrage) {
+        ouvrage.getEmprunteur().restitution(ouvrage);
         ouvrage.setEmprunteur(null);
         ouvrage.setDispo(true);
-        abonne.restitution(ouvrage);
     }
 
     public void addOuvrage(Ouvrage ouvrage) {
