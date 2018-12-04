@@ -1,23 +1,33 @@
 package fr.biblioj;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Abonne {
     private String nom;
     private String adresse;
-    private List<Ouvrage> ouvrages;
-    private List<Ouvrage> emprunts;
+    private List<Ouvrage> ouvrages = new ArrayList<>();
+    private List<Ouvrage> emprunts = new ArrayList<>();
 
     public Abonne(String nom, String adresse) {
         this.nom = nom;
         this.adresse = adresse;
     }
-    public void addOuvrage(Ouvrage ouvrage) {
+
+    public void addReservation(Ouvrage ouvrage) {
         this.ouvrages.add(ouvrage);
     }
 
     public void addEmprunt(Ouvrage ouvrage) {
         this.emprunts.add(ouvrage);
+    }
+
+    public void restitution(Ouvrage ouvrage) {
+        for(Ouvrage emprunt : emprunts)
+            if(ouvrage.equals(emprunt))
+            {
+                emprunts.remove(emprunt);
+            }
     }
 
     public String getNom() {
@@ -36,11 +46,11 @@ public class Abonne {
         this.adresse = adresse;
     }
 
-    public List<Ouvrage> getOuvrages() {
+    public List<Ouvrage> getReservation() {
         return ouvrages;
     }
 
-    public void setOuvrages(List<Ouvrage> ouvrages) {
+    public void setReservation(List<Ouvrage> ouvrages) {
         this.ouvrages = ouvrages;
     }
 

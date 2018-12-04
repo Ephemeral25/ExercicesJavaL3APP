@@ -1,7 +1,9 @@
-
+import fr.biblioj.BiblioJ;
 import fr.calculpaye.EntrepriseJ;
 import fr.gravite.Bonjour;
 import fr.gravite.CalculateurChute;
+import fr.parcattraction.ParcAttraction;
+import fr.parcattraction.Tarif;
 import fr.sallecinema.SalleCinema;
 
 import java.util.ArrayList;
@@ -21,7 +23,7 @@ import java.util.ArrayList;
             System.out.print("\n\n");
 
             //Exercice 1.2
-            System.out.println("Exercice 1.2 : Gravité calculateur de chute\n");
+            System.out.println("\nExercice 1.2 : Gravité calculateur de chute\n");
 
             CalculateurChute fall = new CalculateurChute(10, -9.81);
             System.out.println("Position avant chute : " + fall.getPositionInitiale()
@@ -55,5 +57,25 @@ import java.util.ArrayList;
                 e.printStackTrace();
             }
 
+            System.out.println("\n\n");
+
+            //Exercice 4
+            System.out.println("Exercice 4 : BiblioJ");
+
+            BiblioJ biblio = new BiblioJ();
+            biblio.main();
+
+            System.out.println("\n\n");
+
+            //Exercice 5
+            System.out.println("Exercice 5 : ParcAttraction");
+
+            ParcAttraction parc = new ParcAttraction("DisneilleLand", 12000, 48.5);
+
+            parc.vendreBillets(230, Tarif.Tarifs.réduit);
+            parc.vendreBillets(187, Tarif.Tarifs.illimité);
+            parc.vendreBillets(1453, Tarif.Tarifs.illimité5);
+            parc.vendreBillets(834, Tarif.Tarifs.réduit5);
+            System.out.println(parc);
         }
     }

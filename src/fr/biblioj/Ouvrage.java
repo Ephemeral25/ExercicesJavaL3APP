@@ -1,5 +1,7 @@
 package fr.biblioj;
 
+import java.util.Objects;
+
 public class Ouvrage {
     private String titre;
     public enum SupportMedia {papier, CD, DVD, cléUSB};
@@ -57,14 +59,23 @@ public class Ouvrage {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Ouvrage ouvrage = (Ouvrage) o;
+        return anneeEdition == ouvrage.anneeEdition &&
+                dispo == ouvrage.dispo &&
+                estReserve == ouvrage.estReserve &&
+                Objects.equals(titre, ouvrage.titre) &&
+                media == ouvrage.media &&
+                Objects.equals(emprunteur, ouvrage.emprunteur);
+    }
+
+    @Override
     public String toString() {
-        final StringBuffer sb = new StringBuffer("Ouvrage{");
+        final StringBuffer sb = new StringBuffer("");
         sb.append("titre='").append(titre).append('\'');
         sb.append(", anneeEdition=").append(anneeEdition);
-        sb.append(", dispo=").append(dispo);
-        sb.append(", estReserve=").append(estReserve);
-        sb.append(", emprunteur=").append(emprunteur);
-        sb.append('}');
         return sb.toString();
     }
 }
