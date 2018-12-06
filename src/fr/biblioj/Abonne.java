@@ -25,9 +25,7 @@ public class Abonne {
     public void restitution(Ouvrage ouvrage) {
         for(Ouvrage emprunt : emprunts)
             if(ouvrage.equals(emprunt))
-            {
                 emprunts.remove(emprunt);
-            }
     }
 
     public String getNom() {
