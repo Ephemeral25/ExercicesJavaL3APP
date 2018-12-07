@@ -1,5 +1,6 @@
 import fr.biblioj.BiblioJ;
 import fr.calculpaye.EntrepriseJ;
+import fr.comptebancaire.CompteEpargne;
 import fr.gravite.Bonjour;
 import fr.gravite.CalculateurChute;
 import fr.parcattraction.ParcAttraction;
@@ -68,7 +69,7 @@ import java.util.ArrayList;
             System.out.println("\n\n");
 
             //Exercice 5
-            System.out.println("Exercice 5 : ParcAttraction");
+            System.out.println("Exercice 5 : Parc d'Attraction");
 
             ParcAttraction parc = new ParcAttraction("DisneilleLand", 12000, 48.5);
 
@@ -77,5 +78,14 @@ import java.util.ArrayList;
             parc.vendreBillets(1453, Tarif.Tarifs.illimité5);
             parc.vendreBillets(834, Tarif.Tarifs.réduit5);
             System.out.println(parc);
+
+            System.out.println("\n\n");
+
+            //Exercice 6
+            System.out.println("Exercice 5 : Comptes Bancaires");
+
+            CompteEpargne cpt = new CompteEpargne(12222,22, 30);
+            System.out.println(cpt);
+
         }
     }

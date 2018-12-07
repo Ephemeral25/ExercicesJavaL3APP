@@ -1,9 +1,11 @@
-package fr.comptebancaire;
+package fr.comptebancaire.modeles;
 
 abstract public class CompteAvecLimite {
     private final long plafond;
+    private boolean actif;
 
-    CompteAvecLimite(long plafond) {
+
+    public CompteAvecLimite(long plafond) {
         this.plafond = plafond;
     }
 
